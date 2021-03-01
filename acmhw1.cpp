@@ -14,7 +14,7 @@ int main()
 		"Our indiscretion sometimes serves us well ... "
 		; // — Hamlet, Act 5, Scene 2, 4–8
 
-	std::regex token_re("(^)[s][a-z']+|[\\s\\.\\,\\:\\;][s][a-z']+", std::regex::icase);
+	std::regex token_re("\\b[s][a-z']+\\b", std::regex::icase);
 	std::copy(std::sregex_token_iterator(text.begin(), text.end(), token_re, 0),
 		std::sregex_token_iterator(),
 		std::ostream_iterator<std::string>(std::cout, "\n"));
